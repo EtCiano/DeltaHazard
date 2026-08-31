@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ca8nsf3yiiot4"]
+
+[ext_resource type="Script" uid="uid://bki5c52hwhihc" path="res://scripts/personagem.gd" id="1_wtnic"]
+[ext_resource type="Texture2D" uid="uid://dakdk22b2mbw0" path="res://sprite/ian.png" id="2_bss74"]
+[ext_resource type="Shader" uid="uid://dwfsyv6edp2xr" path="res://scenes/personagem.gdshader" id="3_bss74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtnic"]
+radius = 48.259712
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_en60c"]
+frequency = 0.0027
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bss74"]
+noise = SubResource("FastNoiseLite_en60c")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bss74"]
+shader = ExtResource("3_bss74")
+shader_parameter/texturaRuido = SubResource("NoiseTexture2D_bss74")
+shader_parameter/ativarRuido = true
+shader_parameter/animar = false
+shader_parameter/limite = 0.75999998301248
+shader_parameter/velocidadeAndar = 0.1
+shader_parameter/corRuido = Color(0, 0.5254902, 0, 1)
+shader_parameter/transparencia = 0.0
+shader_parameter/uniforme = true
+
+[node name="Personagem" type="CharacterBody2D" unique_id=1119149512]
+script = ExtResource("1_wtnic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617144108]
+shape = SubResource("CircleShape2D_wtnic")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663706092]
+material = SubResource("ShaderMaterial_bss74")
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_bss74")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=692821850]

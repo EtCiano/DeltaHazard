@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://m026tc4sagh"]
+
+[ext_resource type="PackedScene" uid="uid://ca8nsf3yiiot4" path="res://scenes/personagem.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=1835342057]
+
+[node name="Personagem" parent="." unique_id=1119149512 instance=ExtResource("1_o5qli")]
+position = Vector2(572, 310)
+rotation = -0.0036076503
