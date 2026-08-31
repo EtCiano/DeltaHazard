@@ -8,7 +8,9 @@
 radius = 48.259712
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_en60c"]
-frequency = 0.0027
+frequency = 0.0057
+fractal_type = 0
+fractal_weighted_strength = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bss74"]
 noise = SubResource("FastNoiseLite_en60c")
@@ -18,10 +20,10 @@ seamless = true
 shader = ExtResource("3_bss74")
 shader_parameter/texturaRuido = SubResource("NoiseTexture2D_bss74")
 shader_parameter/ativarRuido = true
-shader_parameter/animar = false
-shader_parameter/limite = 0.75999998301248
-shader_parameter/velocidadeAndar = 0.1
-shader_parameter/corRuido = Color(0, 0.5254902, 0, 1)
+shader_parameter/animar = true
+shader_parameter/limite = 0.60999998636528
+shader_parameter/velocidadeAndar = 0.10000000149012
+shader_parameter/corRuido = Color(0, 0.37254903, 1, 1)
 shader_parameter/transparencia = 0.0
 shader_parameter/uniforme = true
 
